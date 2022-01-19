@@ -1,6 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: Tomato;
+    font-family: Poppins;
+}
+
+/* HEADER and FOOTER */
+header {
+    background: #040404;
+    padding: .2% 0;
+}
+
+.header img {
+    margin: 0 0 0 .5%;
+}
+
+footer {
+    background: #040404;
+    padding: 1% 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+    text-align: right;
+}
+
+.footer span {
+    margin-right: 2%;
+    color: white;
+}
+
+/* ------------------ */
+
+body {
+    position: relative;
+}
+
+main {
+    padding: 0 0 5% 0;
+}
+
+main>h1 {
+    font-weight: lighter;
+    text-align: center;
+    margin: 2% 0 0;
+    font-size: 7vh;
+}
+
+.muchwow {
+    position: absolute;
+    top: 25%;
+    transform: rotate(-25deg);
+    left: 15%;
+}
+
+.form {
+    margin: 3% 0 0;
+    text-align: center;
+}
+
+.form input {
+    width: 15%;
+    margin: 0 0 1% 0;
+    border-radius: 7px;
+    padding: .5% 0;
+    border: none;
+}
+
+.form input:nth-of-type(1) {
+    border: 1px solid black;
+    text-indent: 10px;
+}
+
+.form input::placeholder {
+    text-indent: 10px;
+}
+
+.customHeight {
+    height: 89.5vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 2% 5%;
+    text-align: center;
+}
+
+.grid figure img {
+    width: 100%;
+    height: 70%;
+    border-radius: 10px 10px 0 0;
+}
+
+.grid figure {
+    background: grey;
+    border-radius: 10px;
+    padding: 0 0 5% 0;
+}
+
+figure figcaption:nth-of-type(1) {
+    padding: 1% 0 10%;
+    font-size: 4vh;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    height: 120px;
+}
+
+figure figcaption:nth-of-type(2) {
+    display: inline;
+    border: 1px solid black;
+    padding: 4% 7%;
+    border-radius: 10px;
+}
+
+figure a {
+    text-decoration: none;
+    color: white;
+}
+
+.albumDetail {
+    padding: 3% 0 0;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 2%;
+    background: lightgrey;
+    padding: 1% 0;
+    width: 65%;
+    border-radius: 10px;
+}
+
+.track span {
+    margin: 0 0 0 3%;
+    width: 55%;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    transition: .3s;
+}
+
+input[type="submit"]:active {
+    transform: scale(.85)
 }

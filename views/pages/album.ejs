@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Sbobyfy | Album</title>
+</head>
+<body>
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+    <main>
+        <section class="albumDetail">
+                <% album.forEach(elt => { %>
+                    <div class="track">
+                        <span><%- elt.name %> </span><audio src="<%- elt.preview_url%>" controls></audio>
+                    </div>
+                    <% }) %>
+        </section>
+    </main>
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
+</body>
+</html>
+<script>
+    const audios = document.querySelectorAll('audio')
+    function pauseOtherAudios({ target }) {
+        for (const audio of audios) {
+            if (audio !== target) {
+                audio.pause();
+            }
+        }
+    }
+    for (const audio of audios) {
+        audio.addEventListener('play', pauseOtherAudios);
+    }
+</script>

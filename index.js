@@ -25,27 +25,59 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded())
 app.use(express.json())
+
 app.get("/", (req, res) => {
-    res.render("pages/index")
+    res.render("pages/index", {
+        customClass: "customHeight",
+    })
 })
 
 app.get("/artist-search/", (req, res) => {
     const suchbegriff = req.query.query
     spotifyApi.searchArtists(suchbegriff)
         .then(function (data) {
-            console.log(`Search artists by ${suchbegriff}`, data.body)
             const myArr = data.body.artists.items
-            console.log(myArr)
             res.render("pages/search", {
                 myArr,
+                linkDesc: "View Albums",
+                link: "artist"
             })
         }, function (err) {
             console.error(err)
+            res.redirect("/")
         })
 })
 
+app.get("/artist/:id", (req, res) => {
+    const id = req.params.id
+    spotifyApi.getArtistAlbums(id).then(
+        function (data) {
+            const myArr = data.body.items
+            res.render("pages/search", {
+                myArr,
+                linkDesc: "View Tracks",
+                link: "album"
+            })
+        },
+        function (err) {
+            console.log(err)
+        }
+    )
+})
 
-
+app.get("/album/:id", (req, res) => {
+    const id = req.params.id
+    spotifyApi.getAlbumTracks(id)
+        .then(function (data) {
+            console.log(data.body.items)
+            const album = data.body.items
+            res.render("pages/album", {
+                album,
+            })
+        }, function (err) {
+            console.log("Oopsie!", err)
+        })
+})
 
 
 const PORT = process.env.PORT || 3000;

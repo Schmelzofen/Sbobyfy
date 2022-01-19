@@ -8,17 +8,30 @@
     <title>Sbobyfy | Suche</title>
 </head>
 <body>
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
     <main>
         <section class="grid">
             <% myArr.forEach(elt => { %>
-                <figure>
                     <% if (elt.images.length > 0) { %>
-                    <img src="<%- elt.images[0].url %>" alt="<%- elt.name %>">
-                    <% } %>
-                    <figcaption><%- elt.name %></figcaption>
-                </figure>
+                        <figure>
+                            <img src="<%- elt.images[0].url %>" alt="<%- elt.name %>">
+                            <figcaption><%- elt.name %></figcaption>
+                            <figcaption><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
+                        </figure>
+                    <% } else { %>
+                        <figure>
+                            <img src="/images/rect.png" alt="<%- elt.name %>">
+                            <figcaption><%- elt.name %></figcaption>
+                            <figcaption><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
+                        </figure>
+                        <% } %>
                 <% })%>
         </section>
     </main>
+        <footer>
+            <%- include("../partials/footer.ejs") %>
+        </footer>
 </body>
 </html>

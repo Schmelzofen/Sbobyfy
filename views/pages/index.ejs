@@ -8,10 +8,24 @@
     <title>Sbobyfy | Home</title>
 </head>
 <body>
-    <h1>Spotify API dingens</h1>
-    <form action="/artist-search" method="get">
-        <input type="text" name="query" placeholder="Suchbegriff">
-        <input type="submit" value="Suchen">
-    </form>
+    <header>
+        <%- include("../partials/header.ejs") %>
+    </header>
+    <main class="<%- customClass %>">
+        <h1>Sbobyfy API dingens</h1>
+        <div class="form">
+            <form action="/artist-search" method="get">
+                <input type="text" name="query" placeholder="Conway Twitty" required>
+                <br>
+                <input type="submit" value="Suchen">
+            </form>
+        </div>
+        <div class="muchwow">
+            <img src="/images/wow.jpeg" alt="doge">
+        </div>
+    </main>
+    <footer>
+        <%- include("../partials/footer.ejs") %>
+    </footer>
 </body>
 </html>
