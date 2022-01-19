@@ -15,16 +15,16 @@
         <section class="grid">
             <% myArr.forEach(elt => { %>
                     <% if (elt.images.length > 0) { %>
-                        <figure>
+                        <figure class="linkContainer">
                             <img src="<%- elt.images[0].url %>" alt="<%- elt.name %>">
                             <figcaption><%- elt.name %></figcaption>
-                            <figcaption><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
+                            <figcaption class="linkLow"><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
                         </figure>
                     <% } else { %>
-                        <figure>
+                        <figure class="linkContainer">
                             <img src="/images/rect.png" alt="<%- elt.name %>">
                             <figcaption><%- elt.name %></figcaption>
-                            <figcaption><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
+                            <figcaption class="linkLow"><a href="/<%- link %>/<%- elt.id %>"><%- linkDesc %></a></figcaption>
                         </figure>
                         <% } %>
                 <% })%>

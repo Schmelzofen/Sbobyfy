@@ -95,21 +95,20 @@ main>h1 {
 .grid figure img {
     width: 100%;
     height: 70%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 
 .grid figure {
-    background: grey;
     border-radius: 10px;
-    padding: 0 0 5% 0;
+    padding: 3% 0 5% 0;
 }
 
-figure figcaption:nth-of-type(1) {
-    padding: 1% 0 10%;
-    font-size: 4vh;
+figure >figcaption:nth-of-type(1) {
+    padding: 1% 0 5%;
+    font-size: 3vh;
     font-weight: bolder;
     letter-spacing: 2px;
-    height: 120px;
+    height: 130px;
 }
 
 figure figcaption:nth-of-type(2) {
@@ -121,7 +120,7 @@ figure figcaption:nth-of-type(2) {
 
 figure a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .albumDetail {
@@ -149,5 +148,15 @@ input[type="submit"] {
 }
 
 input[type="submit"]:active {
-    transform: scale(.85)
+    transform: scale(.85);
+}
+
+.linkContainer {
+    position: relative;
+}
+
+.linkLow {
+    position: absolute;
+    bottom: 0%;
+    left: 30%;
 }
