@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Sbobyfy | Suche</title>
+</head>
+<body>
+    <main>
+        <section class="grid">
+            <% myArr.forEach(elt => { %>
+                <figure>
+                    <% if (elt.images.length > 0) { %>
+                    <img src="<%- elt.images[0].url %>" alt="<%- elt.name %>">
+                    <% } %>
+                    <figcaption><%- elt.name %></figcaption>
+                </figure>
+                <% })%>
+        </section>
+    </main>
+</body>
+</html>
